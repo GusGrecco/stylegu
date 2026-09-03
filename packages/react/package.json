@@ -1,0 +1,28 @@
+{
+  "name": "@stylegu/react",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@stylegu/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "jsdom": "^25.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch",
+    "test": "vitest run"
+  }
+}
