@@ -12,7 +12,7 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-primary-600 text-white hover:bg-primary-700",
   secondary: "bg-neutral-100 text-neutral-900 hover:bg-neutral-300",
   ghost: "bg-transparent text-neutral-900 hover:bg-neutral-100",
-  danger: "bg-danger-500 text-white hover:bg-danger-700",
+  danger: "bg-red-500 text-white hover:bg-red-700",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -26,7 +26,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={`inline-flex items-center justify-center rounded-md font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+        className={`
+          inline-flex items-center justify-center 
+          rounded-md 
+          font-medium 
+          transition-colors 
+          disabled:opacity-50 
+          disabled:pointer-events-none 
+          ${variantClasses[variant]} 
+          ${sizeClasses[size]} 
+          ${className}
+        `}
         {...props}
       />
     );
